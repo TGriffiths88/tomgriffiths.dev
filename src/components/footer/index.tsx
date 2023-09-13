@@ -26,7 +26,7 @@ const Footer = ({}: FooterProps) => {
     <footer className="bg-black text-white lg:bg-transparent lg:mix-blend-difference lg:fixed lg:bottom-0 lg:w-full">
       <ul className="uppercase tracking-wide flex text-xs space-x-6 justify-center py-10 px-4 md:px-10 lg:justify-start lg:py-6">
         {FOOTER_LINKS.map((link) => (
-          <li>
+          <li key={link.href}>
             <a
               href={link.href}
               rel="noopener noreferrer"
