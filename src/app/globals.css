@@ -18,3 +18,40 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 }
+
+
+.modal-item {
+  will-change: opacity;
+  transition: opacity 250ms linear; 
+  opacity: 0;
+}
+
+.modal-item.modal-item--appearActive,
+.modal-item.modal-item--appearDone,
+.modal-item.modal-item--enterActive,
+.modal-item.modal-item--enterDone {
+  opacity: 1 !important;
+}
+
+.modal-item .modal-item--exitActive,
+.modal-item .modal-item--exitDone {
+  opacity: 0;
+}
+
+.modal-container {
+  will-change: opacity;
+  transition: opacity 100ms linear; 
+  opacity: 0;
+}
+
+.modal-container.modal-container--appearActive,
+.modal-container.modal-container--appearDone,
+.modal-container.modal-container--enterActive,
+.modal-container.modal-container--enterDone {
+  opacity: 1 !important;
+}
+
+.modal-item .modal-item--exitActive,
+.modal-item .modal-item--exitDone {
+  opacity: 0;
+}
