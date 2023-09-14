@@ -1,25 +1,7 @@
 "use client";
 import Frame from "@/components/frame";
 import SkillList from "@/components/skill-list";
-
-const SKILLS = [
-  {
-    title: "Favourite Stack",
-    items: ["Next.js", "Typescript", "TailwindCSS", "PayloadCMS", "Vercel"],
-  },
-  {
-    title: "Libraries",
-    items: ["Framer Motion", "React Query", "React Hook Form"],
-  },
-  {
-    title: "CMS",
-    items: ["PayloadCMS", "Sanity", "Craft"],
-  },
-  {
-    title: "Enjoys",
-    items: ["Drumming", "Cooking", "Cycling", "Photography"],
-  },
-];
+import config from "../../config";
 
 export default function Home() {
   const openContactModal = () => {
@@ -49,7 +31,7 @@ export default function Home() {
             message me.
           </a>
         </p>
-        <SkillList skills={SKILLS} className="mt-10" />
+        <SkillList skills={config.skills} className="mt-10" />
         <p className="text-xs mt-16 block">
           This site is built with NextJS app router.{" "}
           <a
