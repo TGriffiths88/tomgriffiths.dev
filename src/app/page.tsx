@@ -38,6 +38,7 @@ export default function Home() {
             href="https://github.com/TGriffiths88/tomgriffiths.dev"
             className="font-bold underline"
             rel="noopener noreferrer"
+            target="_blank"
           >
             See the code here.
           </a>

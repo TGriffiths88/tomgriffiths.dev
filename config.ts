@@ -2,11 +2,22 @@ const config = {
   skills: [
     {
       title: "Favourite Stack",
-      items: ["Next.js", "Typescript", "TailwindCSS", "PayloadCMS", "Vercel"],
+      items: [
+        "Next.js",
+        "Typescript",
+        "TailwindCSS",
+        "PayloadCMS",
+        "Vercel",
+        "Zod",
+      ],
     },
     {
       title: "Libraries",
-      items: ["Framer Motion", "React Query", "React Hook Form"],
+      items: ["React Query", "React Hook Form"],
+    },
+    {
+      title: "Animation",
+      items: ["Framer Motion", "Three.js"],
     },
     {
       title: "CMS",
