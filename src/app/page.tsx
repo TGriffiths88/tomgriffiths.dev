@@ -1,12 +1,78 @@
+"use client";
 import Frame from "@/components/frame";
 
+const SKILLS = [
+  {
+    title: "Favourite Stack",
+    items: ["Next.js", "Typescript", "TailwindCSS", "PayloadCMS", "Vercel"],
+  },
+  {
+    title: "Libraries",
+    items: ["Framer Motion", "React Query", "React Hook Form"],
+  },
+  {
+    title: "CMS",
+    items: ["PayloadCMS", "Sanity", "Craft"],
+  },
+  {
+    title: "Enjoys",
+    items: ["Drumming", "Cooking", "Cycling", "Photography"],
+  },
+];
+
 export default function Home() {
+  const openContactModal = () => {
+    console.log("open modal");
+    // TODO: create modal
+  };
+
   return (
     <main>
       <Frame imageSrc="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80">
-        <div className="h-screen bg-white"></div>
-        <div className="h-screen bg-gray-50"></div>
-        <div className="h-screen bg-white"></div>
+        <p className="text-2xl">
+          Hi, I am a <strong>creative typescript developer</strong>, working
+          remotely from Hastings, UK.
+        </p>
+        <p className="text-lg mt-4">
+          I love developing accessible sites and applications that look great
+          and perform well. With a flair for solving problems with creative
+          solutions.
+        </p>
+        <p className="mt-4">
+          For any enquiries please{" "}
+          <a
+            href="#"
+            className="font-bold underline"
+            onClick={openContactModal}
+          >
+            message me.
+          </a>
+        </p>
+        <ul className="flex flex-col gap-6 mt-10">
+          {SKILLS.map((skill) => (
+            <li key={skill.title}>
+              <h3 className="font-bold uppercase text-sm">{skill.title}</h3>
+              <ul className="flex flex-wrap gap-x-1 font-light text-sm">
+                {skill.items.map((item, i) => (
+                  <li key={item}>
+                    {item}
+                    {i !== skill.items.length - 1 && ", "}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+        <p className="text-xs mt-16 block">
+          This site is built with NextJS app router.{" "}
+          <a
+            href="https://github.com/TGriffiths88/tomgriffiths.dev"
+            className="font-bold underline"
+            rel="noopener noreferrer"
+          >
+            See the code here.
+          </a>
+        </p>
       </Frame>
     </main>
   );
