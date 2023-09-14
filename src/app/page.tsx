@@ -1,5 +1,6 @@
 "use client";
 import Frame from "@/components/frame";
+import SkillList from "@/components/skill-list";
 
 const SKILLS = [
   {
@@ -48,21 +49,7 @@ export default function Home() {
             message me.
           </a>
         </p>
-        <ul className="flex flex-col gap-6 mt-10">
-          {SKILLS.map((skill) => (
-            <li key={skill.title}>
-              <h3 className="font-bold uppercase text-sm">{skill.title}</h3>
-              <ul className="flex flex-wrap gap-x-1 font-light text-sm">
-                {skill.items.map((item, i) => (
-                  <li key={item}>
-                    {item}
-                    {i !== skill.items.length - 1 && ", "}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+        <SkillList skills={SKILLS} className="mt-10" />
         <p className="text-xs mt-16 block">
           This site is built with NextJS app router.{" "}
           <a
