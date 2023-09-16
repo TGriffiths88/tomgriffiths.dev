@@ -44,7 +44,7 @@ export default function Home() {
         </Frame>
       </main>
       <ContactModal />
-      <ModalContainer className="h-screen w-screen flex items-center bg-black/30 backdrop-blur-sm" />
+      <ModalContainer className="h-screen w-screen fixed inset-0 flex items-center px-5 bg-black/30 backdrop-blur-sm" />
     </ModalProvider>
   );
 }

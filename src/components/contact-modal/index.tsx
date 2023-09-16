@@ -49,64 +49,62 @@ const ContactModal = ({}: ContactModalProps) => {
 
   return (
     <Modal slug="contact" onClose={reset}>
-      <div className="p-4">
-        <h2 className="text-xl font-bold mb-4">Contact me</h2>
-        {!success && (
-          <form
-            className="flex flex-col gap-y-3"
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <fieldset className="flex flex-col space-y-1">
-              <label className="uppercase text-xs tracking-wide font-bold">
-                Name
-              </label>
-              <input
-                className="border py-2 px-4 rounded-md text-sm"
-                autoComplete="none"
-                {...register("name")}
-              />
-              {errors.name && (
-                <p className="text-xs text-red-800">{errors.name.message}</p>
-              )}
-            </fieldset>
-            <fieldset className="flex flex-col space-y-1">
-              <label className="uppercase text-xs tracking-wide font-bold">
-                Email
-              </label>
-              <input
-                className="border py-2 px-4 rounded-md text-sm"
-                {...register("email")}
-                type="email"
-              />
-              {errors.email && (
-                <p className="text-xs text-red-800">{errors.email.message}</p>
-              )}
-            </fieldset>
-            <fieldset className="flex flex-col space-y-1">
-              <label className="uppercase text-xs tracking-wide font-bold">
-                Message
-              </label>
-              <textarea
-                className="border p-4 rounded-md text-sm"
-                rows={8}
-                {...register("message")}
-              />
-              {errors.message && (
-                <p className="text-xs text-red-800">{errors.message.message}</p>
-              )}
-            </fieldset>
-            <button className="bg-black text-white uppercase min-w-[180px] text-xs tracking-widest rounded-md py-3 font-bold self-start px-10">
-              {loading ? "Sending..." : "Send"}
-            </button>
-          </form>
-        )}
-        {success && <p>Thanks! I&apos;ll be in touch soon.</p>}
-        {error && (
-          <p className="mt-4 text-red-800 text-sm">
-            Sorry, there was an error sending your message. Please try again.
-          </p>
-        )}
-      </div>
+      <h2 className="text-xl font-bold mb-4">Contact me</h2>
+      {!success && (
+        <form
+          className="flex flex-col gap-y-3"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <fieldset className="flex flex-col space-y-1">
+            <label className="uppercase text-xs tracking-wide font-bold">
+              Name
+            </label>
+            <input
+              className="border py-2 px-4 rounded-md text-sm"
+              autoComplete="none"
+              {...register("name")}
+            />
+            {errors.name && (
+              <p className="text-xs text-red-800">{errors.name.message}</p>
+            )}
+          </fieldset>
+          <fieldset className="flex flex-col space-y-1">
+            <label className="uppercase text-xs tracking-wide font-bold">
+              Email
+            </label>
+            <input
+              className="border py-2 px-4 rounded-md text-sm"
+              {...register("email")}
+              type="email"
+            />
+            {errors.email && (
+              <p className="text-xs text-red-800">{errors.email.message}</p>
+            )}
+          </fieldset>
+          <fieldset className="flex flex-col space-y-1">
+            <label className="uppercase text-xs tracking-wide font-bold">
+              Message
+            </label>
+            <textarea
+              className="border p-4 rounded-md text-sm"
+              rows={8}
+              {...register("message")}
+            />
+            {errors.message && (
+              <p className="text-xs text-red-800">{errors.message.message}</p>
+            )}
+          </fieldset>
+          <button className="bg-black text-white uppercase min-w-[180px] text-xs tracking-widest rounded-md py-3 font-bold self-start px-10">
+            {loading ? "Sending..." : "Send"}
+          </button>
+        </form>
+      )}
+      {success && <p>Thanks! I&apos;ll be in touch soon.</p>}
+      {error && (
+        <p className="mt-4 text-red-800 text-sm">
+          Sorry, there was an error sending your message. Please try again.
+        </p>
+      )}
     </Modal>
   );
 };
