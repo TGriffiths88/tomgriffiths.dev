@@ -2,6 +2,7 @@
 import Frame from "@/components/frame";
 import SkillList from "@/components/skill-list";
 import config from "../../config";
+import portrait from "@/images/portrait-test.png";
 import {
   ModalProvider,
   ModalContainer,
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <ModalProvider transTime={250}>
       <main>
-        <Frame imageSrc="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80">
+        <Frame imageSrc={portrait}>
           <div className="min-h-full flex flex-col justify-center">
             <p className="text-2xl">
               Hi, I am a <strong>creative typescript developer</strong>, working
@@ -26,7 +27,10 @@ export default function Home() {
             </p>
             <p className="mt-4">
               For any enquiries please{" "}
-              <ModalToggler slug="contact" className="font-bold underline">
+              <ModalToggler
+                slug="contact"
+                className="font-bold underline hover:opacity-50 duration-300"
+              >
                 message me.
               </ModalToggler>
             </p>
@@ -35,7 +39,7 @@ export default function Home() {
               This site is built with Next.js app router.{" "}
               <a
                 href="https://github.com/TGriffiths88/tomgriffiths.dev"
-                className="font-bold underline"
+                className="font-bold underline hover:opacity-50 duration-300"
                 rel="noopener noreferrer"
                 target="_blank"
               >
