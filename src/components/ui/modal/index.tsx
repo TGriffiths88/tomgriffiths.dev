@@ -5,13 +5,15 @@ import { Modal, ModalToggler } from "@faceless-ui/modal";
 type ModalProps = {
   slug: string;
   children: React.ReactNode;
+  onClose?: () => void;
 };
 
-const UiModal = ({ children, slug }: ModalProps) => {
+const UiModal = ({ children, slug, onClose }: ModalProps) => {
   return (
     <Modal
       slug={slug}
       className="rounded-md p-6 py-10 shadow-lg w-full max-w-md relative bg-white"
+      onClose={onClose}
     >
       <ModalToggler className="absolute top-5 right-5" slug={slug}>
         <svg
