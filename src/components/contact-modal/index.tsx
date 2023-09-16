@@ -4,6 +4,12 @@ import Modal from "../ui/modal";
 import { useForm } from "react-hook-form";
 import { ContactFormData, ContactFormSchema } from "@/schemas/contact-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Input from "../ui/input";
+import Label from "../ui/label";
+import TextArea from "../ui/textarea";
+import FieldError from "../ui/field-error";
+import FieldSet from "../ui/fieldset";
+import Form from "../ui/form";
 
 type ContactModalProps = {};
 
@@ -51,53 +57,26 @@ const ContactModal = ({}: ContactModalProps) => {
     <Modal slug="contact" onClose={reset}>
       <h2 className="text-xl font-bold mb-4">Contact me</h2>
       {!success && (
-        <form
-          className="flex flex-col gap-y-3"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <fieldset className="flex flex-col space-y-1">
-            <label className="uppercase text-xs tracking-wide font-bold">
-              Name
-            </label>
-            <input
-              className="border py-2 px-4 rounded-md text-sm"
-              autoComplete="none"
-              {...register("name")}
-            />
-            {errors.name && (
-              <p className="text-xs text-red-800">{errors.name.message}</p>
-            )}
-          </fieldset>
-          <fieldset className="flex flex-col space-y-1">
-            <label className="uppercase text-xs tracking-wide font-bold">
-              Email
-            </label>
-            <input
-              className="border py-2 px-4 rounded-md text-sm"
-              {...register("email")}
-              type="email"
-            />
-            {errors.email && (
-              <p className="text-xs text-red-800">{errors.email.message}</p>
-            )}
-          </fieldset>
-          <fieldset className="flex flex-col space-y-1">
-            <label className="uppercase text-xs tracking-wide font-bold">
-              Message
-            </label>
-            <textarea
-              className="border p-4 rounded-md text-sm"
-              rows={8}
-              {...register("message")}
-            />
-            {errors.message && (
-              <p className="text-xs text-red-800">{errors.message.message}</p>
-            )}
-          </fieldset>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <FieldSet>
+            <Label htmlFor="name">Name</Label>
+            <Input autoComplete="none" {...register("name")} />
+            <FieldError errorMessage={errors.name?.message} />
+          </FieldSet>
+          <FieldSet>
+            <Label>Email</Label>
+            <Input {...register("email")} type="email" />
+            <FieldError errorMessage={errors.email?.message} />
+          </FieldSet>
+          <FieldSet>
+            <Label>Message</Label>
+            <TextArea rows={8} {...register("message")} />
+            <FieldError errorMessage={errors.message?.message} />
+          </FieldSet>
           <button className="bg-black text-white uppercase min-w-[180px] text-xs tracking-widest rounded-md py-3 font-bold self-start px-10">
             {loading ? "Sending..." : "Send"}
           </button>
-        </form>
+        </Form>
       )}
       {success && <p>Thanks! I&apos;ll be in touch soon.</p>}
       {error && (
