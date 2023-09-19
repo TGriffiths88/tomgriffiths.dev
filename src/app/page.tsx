@@ -32,10 +32,10 @@ export default function Home() {
             <p className="text-lg mt-4">
               I love developing modern sites and applications that look great
               and perform well. I particularly love a creative challenge and a
-              good problem to get my teeth into, especially if it looks great.
+              good problem to get my teeth into.
             </p>
             <p className="text-lg mt-4">
-              Currently working full-time at{" "}
+              Currently working at{" "}
               <Link
                 href="https://mutual.agency"
                 className="underline font-bold hover:opacity-50 duration-300"
@@ -47,7 +47,7 @@ export default function Home() {
               .
             </p>
             <p className="mt-4">
-              For any enquiries,{" "}
+              For enquiries,{" "}
               <ModalToggler
                 slug="contact"
                 className="font-bold underline hover:opacity-50 duration-300"
