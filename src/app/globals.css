@@ -60,3 +60,8 @@ body {
 .modal-item .modal-item--exitDone {
   opacity: 0;
 }
+
+.shader {
+  backface-visibility: hidden;
+}
+
