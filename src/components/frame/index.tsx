@@ -46,7 +46,7 @@ const Frame = (props: FrameProps) => {
       >
         {El}
       </motion.div>
-      <article className="lg:w-[55%] px-4 md:px-10 py-14 lg:py-32 lg:px-32 bg-white/70 backdrop-blur-sm z-10 relative">
+      <article className="lg:w-[55%] px-4 md:px-10 py-14 lg:py-32 xl:px-32 bg-white/70 backdrop-blur-sm z-10 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{
