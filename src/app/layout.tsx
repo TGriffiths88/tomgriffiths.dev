@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "Developer specialising in creative typescript solutions. UK based. Using Next.js, React, Typescript, TailwindCSS and more.",
 };
 
+const trackingId = process.env.NEXT_PUBLIC_TRACKING_ID;
+const trackingUrl = process.env.NEXT_PUBLIC_TRACKING_URL;
+
 export default function RootLayout({
   children,
 }: {
@@ -41,6 +44,14 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#333333" />
         <meta name="msapplication-TileColor" content="#ff0000" />
         <meta name="theme-color" content="#ffffff" />
+        {trackingId && trackingUrl && (
+          <script
+            async
+            defer
+            data-website-id={trackingId}
+            src={trackingUrl}
+          ></script>
+        )}
       </head>
       <body className={inter.className}>
         <Header />
