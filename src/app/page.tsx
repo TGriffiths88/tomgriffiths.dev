@@ -2,7 +2,7 @@
 import Frame from "@/components/frame";
 import SkillList from "@/components/skill-list";
 import config from "../../config";
-import portrait from "@/images/portrait.jpg";
+import portrait from "@/images/Brede_Woods_106.jpg";
 import {
   ModalProvider,
   ModalContainer,
@@ -10,7 +10,7 @@ import {
 } from "@faceless-ui/modal";
 import ContactModal from "@/components/contact-modal";
 import Link from "next/link";
-import ShaderImage from "@/components/shader-image";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -18,9 +18,12 @@ export default function Home() {
       <main>
         <Frame
           imageComponent={
-            <ShaderImage
-              imageSrc={portrait}
-              specularSrc={"./images/specular.jpg"}
+            <Image
+              src={portrait}
+              alt="Portrait of Tom Griffiths in an autumnal woodland"
+              className="absolute inset-0 w-full h-full object-cover"
+              sizes="(min-width:1280px) 50vw, 100vw"
+              priority
             />
           }
         >
