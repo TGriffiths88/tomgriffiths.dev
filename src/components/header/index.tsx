@@ -14,7 +14,7 @@ const Header = ({}: HeaderProps) => {
     >
       <Link
         href="/"
-        className="font-black text-white mix-blend-difference text-2xl hover:opacity-70 duration-300"
+        className="font-black text-black text-2xl hover:opacity-70 duration-300"
       >
         TOM GRIFFITHS
       </Link>

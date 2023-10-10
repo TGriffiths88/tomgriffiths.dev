@@ -32,7 +32,7 @@ const Footer = ({}: FooterProps) => {
       variants={footerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-black z-10 text-white lg:bg-transparent lg:mix-blend-difference lg:fixed lg:bottom-0 lg:left-0 lg:pb-4 lg:px-10 lg:right-0 py-10 lg:flex lg:items-center"
+      className="bg-black z-10 text-white lg:bg-transparent lg:fixed lg:bottom-0 lg:left-0 lg:pb-4 lg:px-10 lg:right-0 py-10 lg:flex lg:items-center"
     >
       <motion.ul className="uppercase tracking-wide flex text-xs space-x-6 justify-center mb-4 lg:mb-2 px-4 md:px-10 lg:justify-start lg:py-6 lg:pb-0 lg:px-0 lg:pt-0">
         {config.footerLinks.map((link) => (
