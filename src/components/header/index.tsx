@@ -16,7 +16,7 @@ const Header = ({}: HeaderProps) => {
         href="/"
         className="font-black text-black text-lg hover:opacity-70 duration-300  ml-auto"
       >
-        TOM GRIFFITHS
+        TOMGRIFFITHS.DEV
       </Link>
     </motion.header>
   );

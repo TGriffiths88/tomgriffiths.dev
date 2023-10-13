@@ -1,10 +1,10 @@
 import Header from "@/components/header";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Courier_Prime } from "next/font/google";
 import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Courier_Prime({ weight: ["400", "700"], subsets: ["latin-ext"] });
 
 export const metadata: Metadata = {
   title: "Creative Typescript Developer - TOM GRIFFITHS",
